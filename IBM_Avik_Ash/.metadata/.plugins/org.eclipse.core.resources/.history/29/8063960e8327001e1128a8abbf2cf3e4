@@ -1,0 +1,42 @@
+package stepdefinitions;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class BlogPage {
+	
+	WebDriver driver;
+	@Given("user is in blog page")
+	public void Navigatefirstpage() {
+		System.setProperty("webdriver.chrome.driver","resources/chromedriver.exe");
+		 ChromeOptions chromeOptions = new ChromeOptions();
+		 chromeOptions.addArguments("--remote-allow-origins=*");
+		 ChromeDriver driver = new ChromeDriver(chromeOptions);
+		 driver.manage().window().maximize();
+		 driver.get("http://www.automationpractice.pl/index.php");
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	}
+	
+	@When("users enters data in sign in page")
+	public void giveinput() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.findElement(By.xpath("//header[@id='header']/div[2]//a")).click();
+		//Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("avikashmar28@gmail.com");
+		driver.findElement(By.xpath("//input[@id='passwd']")).sendKeys("Angana@1995");
+		
+	}
+	@Then("click on submit button")
+	public void clicksubmit() {
+		driver.findElement(By.xpath("//button[@id='SubmitLogin']")).click();
+	}
+
+}

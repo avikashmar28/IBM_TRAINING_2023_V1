@@ -1,0 +1,14 @@
+package RestAssured;
+
+import org.junit.Test;
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
+
+public class VerifyPostRest {
+@Test
+public void verifypost() {
+	RestAssured.baseURI="https://jsonplaceholder.typicode.com";
+}
+}

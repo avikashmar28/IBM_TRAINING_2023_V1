@@ -1,0 +1,12 @@
+package testng;
+
+import org.junit.jupiter.api.Test;
+
+class TestNGClass {
+
+	@Test
+	void test() {
+		System.out.println("Hello");
+	}
+
+}

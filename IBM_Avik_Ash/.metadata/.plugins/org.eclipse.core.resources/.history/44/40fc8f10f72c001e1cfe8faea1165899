@@ -1,0 +1,21 @@
+package RestAssured;
+
+import org.junit.Test;
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
+
+public class VerifyPostRest {
+@Test
+public void verifypost() {	
+	RestAssured.baseURI="https://jsonplaceholder.typicode.com";
+	String reqbody="{\"title\":\"abc\",\"body\":\"far\",\"userid\":\"1\"}";
+	Response resp=RestAssured.given().body(reqbody).post("/posts").then().extract().response();
+	System.out.println(resp.getStatusCode());
+	ResponseBody respbody=resp.body();
+	JsonPath jspath=respbody.jsonPath();
+	System.out.println(jspath.getInt("id"));
+	
+}
+}

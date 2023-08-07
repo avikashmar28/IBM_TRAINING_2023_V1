@@ -1,0 +1,21 @@
+package RestAssured;
+
+import static org.junit.Assert.*;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+import org.junit.Test;
+
+public class genderfetchAPI {
+
+	@Test
+	public void fetchgender() {
+		
+		RestAssured.baseURI="https://api.genderize.io/";
+		RequestSpecification myreq=RestAssured.given();
+		myreq.queryParam("name", "avik");
+		Response response = myreq.get(RestAssured.baseURI);
+		System.out.println(response.toString());
+	}
+}

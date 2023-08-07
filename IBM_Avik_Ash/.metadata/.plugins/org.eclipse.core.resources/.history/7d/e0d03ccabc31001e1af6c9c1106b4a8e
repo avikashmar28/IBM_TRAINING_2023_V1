@@ -1,0 +1,13 @@
+package testng;
+
+import org.testng.annotations.Test;
+
+class TestNGClass {
+
+	@Test
+	void test() {
+		System.out.println("Hello World");
+		
+	}
+
+}

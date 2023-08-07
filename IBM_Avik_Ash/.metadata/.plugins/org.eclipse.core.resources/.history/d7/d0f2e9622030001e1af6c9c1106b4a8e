@@ -1,0 +1,25 @@
+package Mobile_auto;
+import java.net.MalformedURLException;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class AppAuto {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String username="avikash_QvfRcH";
+		String automate_key="MeCYohWMTvyp5gzpfFta";
+		DesiredCapabilities cap=new DesiredCapabilities();
+		cap.setCapability("os-version", "9.0");
+		cap.setCapability("device", "Google Pixel 3"); 
+		cap.setCapability("app", "bs://ea860c65f971e4eca7132c75e7d68e202fe0543a"); 
+		cap.setCapability("project", "Java_Project"); 
+		cap.setCapability("build", "Build 1.0"); 
+		cap.setCapability("name", "Demo App Test");
+		String URL="https://" + username + ":" + automate_key + "@hub-cloud.browserstack.com/wd/hub";
+
+
+
+	}
+
+}

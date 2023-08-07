@@ -1,0 +1,10 @@
+package Mobile_auto;
+
+public class AppAuto {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

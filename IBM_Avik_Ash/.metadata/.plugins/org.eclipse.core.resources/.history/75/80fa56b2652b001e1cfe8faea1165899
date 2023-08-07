@@ -1,0 +1,14 @@
+package RestAssured;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class genderfetchAPI {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,5 @@
+Feature:Blog
+Scenario: validate blog entering functionality
+Given user is in blog page
+When sign in page
+Then click on submit button
